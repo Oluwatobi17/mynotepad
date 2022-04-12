@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Provider, useDispatch, useSelector } from 'react-redux';
+import { useContext, useEffect, useState } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { AuthCtx } from './store/auth-context';
+
+import Home from './Pages/Home';
+import Login from './Pages/Login';
+
+const App = () =>{
+	const [user, setUser] = useContext(AuthCtx);
+	const dispatch = useDispatch();
+	const [userS, setUserS] = useState(false);
+
+	const users = useSelector(state => state.users);
+
+	useEffect(()=>{
+		if(localStorage.getItem('user')){
+			setUserS(localStorage.getItem('user'));
+			setUser(localStorage.getItem('user'));
+		}
+	}, []);
+
+	useEffect(()=>{
+        let storedUser = JSON.parse(localStorage.getItem('users'));
+
+		if(JSON.stringify(users) !== JSON.stringify(storedUser)){
+			if(Object.keys(users).length > Object.keys(storedUser).length){
+				localStorage.setItem('users', JSON.stringify(users));
+			}else{
+				dispatch({type: 'UPDATE_USERS', payload: storedUser});
+			}
+		}
+
+    }, [users]);
+
+	return <>
+		<Routes>
+			{user.length>0 && <Route path='/' element={<Home />} />}
+			<Route path='/login' element={<Login type='login' />}/>
+			<Route path='/signup' element={<Login type='signup' />}/>
+			<Route path='*' element={<Login type='login'/>} />
+		</Routes>
+	</>
 }
 
 export default App;

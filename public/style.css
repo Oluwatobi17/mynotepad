@@ -1,0 +1,219 @@
+:root{
+    --primaryColor: #42b0e2;
+    --black: black;
+}
+body{
+    font-family: 'Titillium Web', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+form{
+    display: inline;
+}
+nav{
+    background-color: var(--primaryColor);
+    width: 100%;
+    box-sizing: border-box;
+    height: 50px;
+    padding: 10px 50px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav div a{
+    color: white;
+    margin: 10px;
+}
+nav div a:hover{
+    opacity: 0.8;
+}
+a{
+    text-decoration: none;
+    color: var(--primaryColor);
+    transition: all 300ms ease;
+}
+.fa{
+    cursor: pointer;
+    transition: all 800ms ease-in;
+}
+.fa:hover{
+    opacity: 0.8;
+}
+nav span a{
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.home-container{
+    display: flex;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+.notes-container{
+    flex: 1;
+    border-right: 1px solid #ccc;
+}
+.notedetails-container{
+    flex: 3;
+}
+.notedetails-container .save{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    border-right: 1px solid #ccc;
+    color: #ccc;
+    font-weight: bold;
+}
+.search-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.search{
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    width: 85%;
+    padding-left: 40px;
+    outline: none;
+}
+.search-container .fa-search{
+    position: absolute;
+    left: 20px;
+    color: #ccc;
+}
+.search-container .fa-plus{
+    color: var(--primaryColor);
+    margin-left: 10px;
+}
+.notelist-container h5{
+    margin: 5px 10px;
+    color: var(--primaryColor);
+}
+.preamble-active{
+    background-color: rgba(66, 176, 226, 0.1);
+    transition: all 300ms ease;
+}
+.preamble-active:hover{
+    opacity: 0.8;
+}
+.preamble-container{
+    cursor: pointer;
+    padding: 5px 20px;
+}
+.preamble-container h3{
+    color: black;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+.preamble-container p{
+    color: rgb(144, 141, 141);
+    font-size: 13px;
+    position: relative;
+    margin-top: 2px;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.detailsnav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+    color: var(--primaryColor);
+}
+.authoremail{
+    font-weight: bold;
+}
+.editor-container{
+    border-top: 1px solid #ccc;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    color: black;
+}
+.editor-container input{
+    width: 97%;
+    height: 10%;
+    padding: 10px;
+    border: 0px;
+    outline: none;
+}
+.editor-container textarea{
+    width: 95%;
+    padding: 10px;
+    border: 0px;
+    outline: none;
+    resize: none;
+}
+.login-container{
+    margin: 20px auto;
+    background-color: white;
+    width: 40%;
+    padding: 20px;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.login-container h2{
+    text-transform: uppercase;
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.error{
+    color: rgba(255, 0, 0, 0.7);
+    font-weight: bold;
+    text-align: center;
+}
+.login-container input[type='text'], .login-container input[type='password']{
+    max-width: 87%;
+    margin-bottom: 10px;
+    padding: 10px;
+    padding-left: 40px;
+    outline: none;
+    background-color: rgba(66, 176, 226, 0.1);
+    border: 1px solid transparent;
+}
+.login-container input[type='submit']{
+    max-width: 100%;
+    outline: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: var(--primaryColor);
+    border: 1px solid transparent;
+}
+.login-container input[type='submit']:hover{
+    opacity: 0.7;
+}
+.login-container .fa{
+    position: relative;
+    left: 20px;
+    top: 25px;
+    cursor: none;
+}
+.save{
+    margin: 5px;
+}
+.save button{
+    background: linear-gradient(180deg, var(--primaryColor), rgba(66, 176, 226, 0.3));
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.save button:hover{
+    opacity: 0.6;
+}
