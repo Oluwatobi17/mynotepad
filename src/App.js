@@ -24,6 +24,11 @@ const App = () =>{
 	useEffect(()=>{
         let storedUser = JSON.parse(localStorage.getItem('users'));
 
+		if(storedUser==null || storedUser===undefined){
+			localStorage.setItem('users', JSON.stringify(users));
+			return;
+		}
+
 		if(JSON.stringify(users) !== JSON.stringify(storedUser)){
 			if(Object.keys(users).length > Object.keys(storedUser).length){
 				localStorage.setItem('users', JSON.stringify(users));
