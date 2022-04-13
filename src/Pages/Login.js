@@ -5,6 +5,7 @@ import Header from '../Components/Header';
 
 import { AuthCtx } from '../store/auth-context';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../Components/Footer';
 
 const Login = props =>{
     const emailRef = useRef(null);
@@ -71,6 +72,8 @@ const Login = props =>{
                 <input type='submit' value={props.type=='signup'? 'SIGNUP': 'LOGIN'} />
             </div>
         </form>
+
+        <Footer />
     </>
 }
 
